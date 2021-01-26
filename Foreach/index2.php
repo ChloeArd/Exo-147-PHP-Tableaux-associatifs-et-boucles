@@ -35,5 +35,3 @@ foreach ($college as $index => $value) {
     }
 }
 echo "<br><br>";
-
-echo "<br><br>";
