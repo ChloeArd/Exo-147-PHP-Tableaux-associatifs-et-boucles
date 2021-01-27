@@ -42,9 +42,9 @@ echo '12.Mes films : <br><br>';
 foreach ($videotheque as $index) {
     foreach ($index as $propriete => $valeur) {
         if(is_array($valeur)){
-            echo "acteur : ";
+            echo "acteurs : ";
             foreach($valeur as $index2){
-                echo $index2;
+                echo $index2.", ";
             }
             echo "<br><br>";
         }
@@ -81,7 +81,7 @@ Peter doit faire ses preuves en affrontant ce dernier pour prouver à Tony Stark
     array(
         'nom' => 'Avengers Endgame',
         'date' => 2019,
-        'realisateur' => "Anthony","Joe Russo",
+        'realisateur' => "Joe Russo",
         'acteurs' => array(
             "Robert Downey Jr.", "Chris Evans", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner", "Mark Ruffalo", "Josh Brolin", "Karen Gillan"),
         'Résumé' => "Le Titan Thanos ayant réussi à s'approprier les six Pierres d'Infinité et à les réunir sur le Gantelet doré, a pu réaliser son objectif 
@@ -99,7 +99,7 @@ Peter doit faire ses preuves en affrontant ce dernier pour prouver à Tony Stark
     array(
         'nom' => 'BabySitting',
         'date' => 2014,
-        'realisateur' => 'Nicolas Benamou', 'Philippe Lacheau',
+        'realisateur' => 'Philippe Lacheau',
         'acteurs' => array(
             "Philippe Lacheau", "Vincent Desagnat", "Enzo Tomasini", "Tarek Boudali", "Gérard Jugnot"),
         'Résumé' => "Franck, agent d'accueil aux éditions Schaudel, souhaite devenir dessinateur de bande dessinée.
@@ -111,10 +111,17 @@ Peter doit faire ses preuves en affrontant ce dernier pour prouver à Tony Stark
 
 foreach ($videotheque as $index) {
     foreach ($index as $propriete => $valeur) {
-        echo $propriete." : ".$valeur."<br>";
-    }
-    foreach ($valeur as $index2 => $valeur2) {
-        echo $valeur2."<br>";
+        if(is_array($valeur)){
+            echo "acteurs : ";
+            foreach($valeur as $index2){
+                echo $index2.", ";
+            }
+            echo "<br><br>";
+        }
+        else{
+            echo $propriete . " : " . $valeur . "<br>";
+        }
+        echo "<br>";
     }
 }
 echo "<br><br>";
