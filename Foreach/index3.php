@@ -46,7 +46,7 @@ foreach ($videotheque as $index) {
             foreach($valeur as $index2){
                 echo $index2;
             }
-            echo "<br>";
+            echo "<br><br>";
         }
         else{
             echo $propriete . " : " . $valeur . "<br>";
