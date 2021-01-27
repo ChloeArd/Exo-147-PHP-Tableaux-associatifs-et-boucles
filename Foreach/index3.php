@@ -39,12 +39,18 @@ $videotheque = array(
 
 echo '12.Mes films : <br><br>';
 //ajoutez votre code ici
-foreach ($videotheque as $index => $value) {
-    foreach ($value as $propriete => $valeur) {
-        echo $propriete." : ".$valeur."<br>";
-    }
-    foreach ($valeur as $index2 => $valeur2) {
-        echo $valeur2."<br>";
+foreach ($videotheque as $index) {
+    foreach ($index as $propriete => $valeur) {
+        if(is_array($valeur)){
+            echo "acteur : ";
+            foreach($valeur as $index2){
+                echo $index2;
+            }
+            echo "<br>";
+        }
+        else{
+            echo $propriete . " : " . $valeur . "<br>";
+        }
     }
 }
 echo "<br><br>";
@@ -103,8 +109,8 @@ Peter doit faire ses preuves en affrontant ce dernier pour prouver à Tony Stark
     )
 );
 
-foreach ($videotheque as $index => $value) {
-    foreach ($value as $propriete => $valeur) {
+foreach ($videotheque as $index) {
+    foreach ($index as $propriete => $valeur) {
         echo $propriete." : ".$valeur."<br>";
     }
     foreach ($valeur as $index2 => $valeur2) {
